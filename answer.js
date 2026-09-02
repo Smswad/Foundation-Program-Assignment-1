@@ -34,3 +34,23 @@ function getDayType(day) {
             return "Invalid Day"
     }
 }
+
+// Question 3: Username Gatekeeper
+
+function validateUsername(call) {
+    const CharacterCheck = call.length;
+    const CheckSpace = call.includes(" ");
+    const ReservedWord = call.toLowerCase().includes("admin");
+    if (CharacterCheck < 4) {
+        return "Too Short";
+    }
+    else if (CheckSpace) {
+        return "No Space Allowed"
+    }
+    else if (ReservedWord) {
+        return "Reserved Word"
+    }
+    else {
+        return "Available"
+    }
+}
