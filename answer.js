@@ -54,3 +54,29 @@ function validateUsername(call) {
         return "Available"
     }
 }
+
+// Question 4: Dhaka CNG Fare Meter
+
+function getCngFare(distance, isNight = false, waitingMinutes = 0) {
+    let After2kmCharge = distance - 2;
+    let waitingMinutesCharge = (waitingMinutes * 2);
+    let isNightCharge = (20 / 100);
+    let CostifDay = 0;
+
+    if (distance == 1 || distance == 2) {
+        CostifDay = 50 + waitingMinutesCharge;
+        if (isNight) {
+            return (CostifDay + (CostifDay * isNightCharge));
+        } else {
+            return CostifDay;
+        }
+    }
+    else if (distance >= 3) {
+        CostifDay = (50 + (After2kmCharge * 15)) + waitingMinutesCharge;
+        if (isNight) {
+            return (CostifDay + (CostifDay * isNightCharge));
+        } else {
+            return CostifDay;
+        }
+    }
+}
