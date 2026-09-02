@@ -63,7 +63,7 @@ function getCngFare(distance, isNight = false, waitingMinutes = 0) {
     let isNightCharge = (20 / 100);
     let CostifDay = 0;
 
-    if (distance == 1 || distance == 2) {
+    if (distance <= 2) {
         CostifDay = 50 + waitingMinutesCharge;
         if (isNight) {
             return (CostifDay + (CostifDay * isNightCharge));
@@ -71,7 +71,7 @@ function getCngFare(distance, isNight = false, waitingMinutes = 0) {
             return CostifDay;
         }
     }
-    else if (distance >= 3) {
+    else if (distance > 2) {
         CostifDay = (50 + (After2kmCharge * 15)) + waitingMinutesCharge;
         if (isNight) {
             return (CostifDay + (CostifDay * isNightCharge));
