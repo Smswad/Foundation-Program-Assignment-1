@@ -10,4 +10,4 @@ function describeValue(value) {
         return `${valueType} | falsy`
     }
 }
-console.log(describeValue(null));
+// console.log(describeValue());

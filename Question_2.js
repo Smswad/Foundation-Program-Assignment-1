@@ -1,16 +1,3 @@
-// Question 1: Value Detective
-
-function describeValue(value) {
-    let valueType = typeof value;
-    let BooleanType = Boolean(value);
-    if (BooleanType) {
-        return `${valueType} | truthy`
-    }
-    else {
-        return `${valueType} | falsy`
-    }
-}
-
 // Question 2: Bangladesh Weekend Machine
 
 function getDayType(day) {
@@ -34,3 +21,5 @@ function getDayType(day) {
             return "Invalid Day"
     }
 }
+
+console.log(getDayType("Bandarban"));
